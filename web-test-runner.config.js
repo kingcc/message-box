@@ -36,7 +36,7 @@ import {playwrightLauncher} from '@web/test-runner-playwright';
 //   capabilities: {
 //     'browserstack.user': process.env.BROWSER_STACK_USERNAME,
 //     'browserstack.key': process.env.BROWSER_STACK_ACCESS_KEY,
-//     project: 'my-element',
+//     project: 'message-box',
 //     name: 'unit tests',
 //     build: `${process.env.GITHUB_REF ?? 'local'} build ${
 //       process.env.GITHUB_RUN_NUMBER ?? ''

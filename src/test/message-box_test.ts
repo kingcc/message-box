@@ -4,20 +4,20 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-import {MyElement} from '../my-element.js';
+import {MessageBox} from '../message-box.js';
 
 import {fixture, html} from '@open-wc/testing';
 
 const assert = chai.assert;
 
-suite('my-element', () => {
+suite('message-box', () => {
   test('is defined', () => {
-    const el = document.createElement('my-element');
-    assert.instanceOf(el, MyElement);
+    const el = document.createElement('message-box');
+    assert.instanceOf(el, MessageBox);
   });
 
   test('renders with default values', async () => {
-    const el = await fixture(html`<my-element></my-element>`);
+    const el = await fixture(html`<message-box></message-box>`);
     assert.shadowDom.equal(
       el,
       `
@@ -29,7 +29,7 @@ suite('my-element', () => {
   });
 
   test('renders with a set name', async () => {
-    const el = await fixture(html`<my-element name="Test"></my-element>`);
+    const el = await fixture(html`<message-box name="Test"></message-box>`);
     assert.shadowDom.equal(
       el,
       `
@@ -41,7 +41,7 @@ suite('my-element', () => {
   });
 
   test('handles a click', async () => {
-    const el = (await fixture(html`<my-element></my-element>`)) as MyElement;
+    const el = (await fixture(html`<message-box></message-box>`)) as MessageBox;
     const button = el.shadowRoot!.querySelector('button')!;
     button.click();
     await el.updateComplete;
@@ -56,7 +56,7 @@ suite('my-element', () => {
   });
 
   test('styling applied', async () => {
-    const el = (await fixture(html`<my-element></my-element>`)) as MyElement;
+    const el = (await fixture(html`<message-box></message-box>`)) as MessageBox;
     await el.updateComplete;
     assert.equal(getComputedStyle(el).paddingTop, '16px');
   });

@@ -20,7 +20,7 @@ module.exports = function (data) {
     <script src="/node_modules/lit/polyfill-support.js"></script>
     <script type="module" src="${relative(
       page.url,
-      '/my-element.bundled.js'
+      '/message-box.bundled.js'
     )}"></script>
   </head>
   <body>

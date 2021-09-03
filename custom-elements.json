@@ -2,9 +2,9 @@
   "version": "experimental",
   "tags": [
     {
-      "name": "my-element",
-      "path": "./src/my-element.ts",
-      "description": "An example element.",
+      "name": "message-box",
+      "path": "./src/message-box.ts",
+      "description": "A simple message-box web component.",
       "attributes": [
         {
           "name": "name",

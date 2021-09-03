@@ -49,4 +49,4 @@ const it=(t,i)=>"method"===i.kind&&i.descriptor&&!("value"in i.descriptor)?{...i
       padding: 16px;
       max-width: 800px;
     }
-  `,et([st()],ot.prototype,"name",void 0),et([st({type:Number})],ot.prototype,"count",void 0),ot=et([(t=>i=>"function"==typeof i?((t,i)=>(window.customElements.define(t,i),i))(t,i):((t,i)=>{const{kind:s,elements:e}=i;return{kind:s,elements:e,finisher(i){window.customElements.define(t,i)}}})(t,i))("my-element")],ot);export{ot as MyElement};
+  `,et([st()],ot.prototype,"name",void 0),et([st({type:Number})],ot.prototype,"count",void 0),ot=et([(t=>i=>"function"==typeof i?((t,i)=>(window.customElements.define(t,i),i))(t,i):((t,i)=>{const{kind:s,elements:e}=i;return{kind:s,elements:e,finisher(i){window.customElements.define(t,i)}}})(t,i))("message-box")],ot);export{ot as MessageBox};
