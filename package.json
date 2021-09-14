@@ -1,5 +1,5 @@
 {
-  "name": "message-box",
+  "name": "@lit-component/message-box",
   "version": "1.0.0",
   "description": "A simple message-box web component",
   "main": "message-box.js",
@@ -28,7 +28,7 @@
   },
   "keywords": [
     "web-components",
-    "lit-element",
+    "lit-component",
     "typescript",
     "lit",
     "message-box"
@@ -36,7 +36,8 @@
   "author": "kingcc",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "lit": "^2.0.0-rc.1"
+    "lit": "^2.0.0-rc.1",
+    "lit-html": "^2.0.0-rc.2"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",

@@ -33,25 +33,9 @@
       
         <h2>&lt;message-box></h2>
         <div>
-          An example element.
+          A simple message-box web component.
         </div>
         
-    <h3>Attributes</h3>
-    <table>
-      <tr>
-        <th>Name</th><th>Description</th><th>Type</th><th>Default</th>
-      </tr>
-      
-        <tr>
-          <td>name</td><td>The name to say "Hello" to.</td><td>string</td><td>"World"</td>
-        </tr>
-      
-        <tr>
-          <td>count</td><td>The number of times the button has been clicked.</td><td>number</td><td>0</td>
-        </tr>
-      
-    </table>
-  
         
     <h3>Properties</h3>
     <table>
@@ -60,37 +44,39 @@
       </tr>
       
         <tr>
-          <td>name</td><td>name</td><td>The name to say "Hello" to.</td><td>string</td><td>"World"</td>
+          <td>height</td><td>height</td><td>The height of component</td><td>string</td><td>"initial"</td>
         </tr>
       
         <tr>
-          <td>count</td><td>count</td><td>The number of times the button has been clicked.</td><td>number</td><td>0</td>
+          <td>width</td><td>width</td><td>The width of component</td><td>string</td><td>"initial"</td>
         </tr>
       
         <tr>
-          <td>renderRoot</td><td>undefined</td><td>Node or ShadowRoot into which element DOM should be rendered. Defaults
-to an open shadowRoot.</td><td>HTMLElement | ShadowRoot</td><td>undefined</td>
+          <td>minWidth</td><td>min-width</td><td>The min-width of component</td><td>string</td><td>"initial"</td>
         </tr>
       
         <tr>
-          <td>isUpdatePending</td><td>undefined</td><td>undefined</td><td>boolean</td><td>undefined</td>
+          <td>border</td><td>border</td><td>The `border` css property of component</td><td>string</td><td>"0"</td>
         </tr>
       
         <tr>
-          <td>hasUpdated</td><td>undefined</td><td>undefined</td><td>boolean</td><td>undefined</td>
+          <td>color</td><td>color</td><td>The `color` css property of component</td><td>string</td><td>"255, 255, 255"</td>
         </tr>
       
         <tr>
-          <td>updateComplete</td><td>undefined</td><td>Returns a Promise that resolves when the element has completed updating.
-The Promise value is a boolean that is `true` if the element completed the
-update without triggering another update. The Promise result is `false` if
-a property was set inside `updated()`. If the Promise is rejected, an
-exception was thrown during the update.
-
-To await additional asynchronous work, override the `getUpdateComplete`
-method. For example, it is sometimes useful to await a rendered element
-before fulfilling this Promise. To do this, first await
-`super.getUpdateComplete()`, then any subsequent state.</td><td>Promise<boolean></td><td>undefined</td>
+          <td>radius</td><td>radius</td><td>The `border-radius` of component</td><td>string</td><td>"0"</td>
+        </tr>
+      
+        <tr>
+          <td>shadow</td><td>shadow</td><td>The `box-shadow` css property of component</td><td>string</td><td>"0, 1rem, 1rem"</td>
+        </tr>
+      
+        <tr>
+          <td>out</td><td>out</td><td>The out method of component. one of "right"|"top".</td><td>string</td><td>""</td>
+        </tr>
+      
+        <tr>
+          <td>timeout</td><td>timeout</td><td>The display time of the component.</td><td>string</td><td>"0"</td>
         </tr>
       
     </table>
@@ -105,7 +91,11 @@ before fulfilling this Promise. To do this, first await
       </tr>
       
         <tr>
-          <td></td><td>This element has a slot</td>
+          <td>message</td><td>The 'message' component that needs to be displayed, the most basic such as `SPAN`</td>
+        </tr>
+      
+        <tr>
+          <td>button</td><td>`BUTTON`s that need to be displayed</td>
         </tr>
       
     </table>
@@ -118,7 +108,11 @@ before fulfilling this Promise. To do this, first await
       </tr>
       
         <tr>
-          <td>button</td><td>The button</td>
+          <td>--message-box-background-color</td><td>Set background color of component</td>
+        </tr>
+      
+        <tr>
+          <td>--message-box-opacity</td><td>Set opacity of component</td>
         </tr>
       
     </table>

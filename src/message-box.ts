@@ -16,12 +16,8 @@ enum Status {
   triiggered,
 }
 
-/**
- * An example element.
- *
- * @slot - This element has a slot
- * @csspart button - The button
- */
+type StyleProperty = string | null | undefined
+
 @customElement('message-box')
 export class MessageBox extends LitElement {
 
@@ -34,25 +30,25 @@ export class MessageBox extends LitElement {
   //// Properties ////
 
   @property({ type: String })
-  private height = 'initial'
+  private height: StyleProperty
 
   @property({ type: String })
-  private minWidth = 'initial'
+  private minWidth: StyleProperty
 
   @property({ type: String })
-  private width = 'initial'
+  private width: StyleProperty
 
   @property({ type: String })
-  private border = '0'
+  private border: StyleProperty
 
   @property({ type: String })
-  private color = '255, 255, 255'
+  private color: StyleProperty
 
   @property({ type: String })
-  private radius = '0'
+  private radius: StyleProperty
 
   @property({ type: String })
-  private shadow = '0 1em 1em'
+  private shadow = '0 1rem 1rem'
 
   @property({ type: String })
   private out = ''
@@ -107,13 +103,13 @@ export class MessageBox extends LitElement {
       minWidth,
       border,
       borderRadius: radius,
-      boxShadow: /[0-9\spxrem]/.test(shadow) 
+      boxShadow: /^[0-9\spxrem]+$/.test(shadow) 
         ? `${shadow} rgba(
           var(--message-box-background-color),
           calc(var(--message-box-opacity) * 0.8)
         )`
         : shadow,
-      color: `rgb(${color})`,
+      color: color && `rgb(${color})`,
       animation: Number(timeout) > 0
         ? `${timeout}s linear progress`
         : 'initial'

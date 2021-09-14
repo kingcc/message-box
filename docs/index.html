@@ -34,31 +34,27 @@
 <section class="columns">
   <div>
 <p><code>&lt;message-box&gt;</code> is just an HTML element. You can it anywhere you can use HTML!</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>message-box</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>message-box</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html">      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>message-box</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>          This is a message-box web component.<br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>message-box</span><span class="token punctuation">></span></span></code></pre>
   </div>
   <div>
-<p><message-box></message-box></p>
+  <message-box>
+    <span slot="message">
+      This is a message-box web component.
+    </span>
+    <button slot="button">Close</button>
+  </message-box>
   </div>
 </section>
 <h2>Configure with attributes</h2>
 <section class="columns">
   <div>
 <p><code>&lt;message-box&gt;</code> can be configured with attributed in plain HTML.</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>message-box</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>HTML<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>message-box</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html">      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>message-box</span><br>        <span class="token attr-name">min-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>12em<span class="token punctuation">"</span></span><br>        <span class="token attr-name">radius</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>128vw<span class="token punctuation">"</span></span><br>      <span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>This is a smooth one...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>message-box</span><span class="token punctuation">></span></span></code></pre>
   </div>
   <div>
-<p><message-box name="HTML"></message-box></p>
-  </div>
-</section>
-<h2>Declarative rendering</h2>
-<section class="columns">
-  <div>
-<p><code>&lt;message-box&gt;</code> can be used with declarative rendering libraries like Angular, React, Vue, and lit-html</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span>html<span class="token punctuation">,</span> render<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'lit-html'</span><span class="token punctuation">;</span><br><br><span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">'lit-html'</span><span class="token punctuation">;</span><br><br><span class="token function">render</span><span class="token punctuation">(</span><br>  html<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>    &lt;h2>This is a &amp;lt;message-box&amp;gt;&lt;/h2><br>    &lt;message-box .name=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">>&lt;/message-box><br>  </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span><br>  document<span class="token punctuation">.</span>body<br><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-  </div>
-  <div>
-<h2>This is a &lt;message-box&gt;</h2>
-<message-box name="lit-html"></message-box>
+<message-box min-width="12em" radius="128vw">
+  <span slot="message">This is a smooth one...</span>
+</message-box>
   </div>
 </section>
 

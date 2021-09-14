@@ -1,10 +1,4 @@
 import { LitElement } from 'lit';
-/**
- * An example element.
- *
- * @slot - This element has a slot
- * @csspart button - The button
- */
 export declare class MessageBox extends LitElement {
     static styles: import("lit").CSSResultGroup[];
     static shadowRootOptions: ShadowRootInit;

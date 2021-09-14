@@ -10,17 +10,18 @@ export const root = css `
   .root {
     display: grid;
     grid-template-columns: auto 1fr;
+    color: white;
     background: rgba(
       var(--message-box-background-color),
       var(--message-box-opacity)
     );
-    margin: 1em;
+    margin: 1rem;
     overflow: hidden;
     padding: 0;
     transition: all 256ms ease-in;
   }
   .root > * {
-    padding: .5em 1em;
+    padding: .5rem 1rem;
   }
 `;
 export const content = css `
@@ -40,10 +41,10 @@ export const button = css `
     border: none;
     flex: 1 0;
     margin: 0;
-    padding: .25em 1em;
+    padding: .25rem 1rem;
     background: none;
     cursor: pointer;
-    color: white;
+    color: inherit;
     font-weight: bold;
     outline: none;
   }

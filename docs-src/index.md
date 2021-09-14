@@ -15,13 +15,23 @@ title: <message-box> ⌲ Home
 `<message-box>` is just an HTML element. You can it anywhere you can use HTML!
 
 ```html
-<message-box></message-box>
+      <message-box>
+        <span slot="message">
+          This is a message-box web component.
+        </span>
+        <button slot="button">Close</button>
+      </message-box>
 ```
 
   </div>
   <div>
 
-<message-box></message-box>
+  <message-box>
+    <span slot="message">
+      This is a message-box web component.
+    </span>
+    <button slot="button">Close</button>
+  </message-box>
 
   </div>
 </section>
@@ -34,43 +44,21 @@ title: <message-box> ⌲ Home
 `<message-box>` can be configured with attributed in plain HTML.
 
 ```html
-<message-box name="HTML"></message-box>
+      <message-box
+        min-width="12em"
+        radius="128vw"
+      >
+        <span slot="message">This is a smooth one...</span>
+      </message-box>
 ```
 
   </div>
   <div>
 
-<message-box name="HTML"></message-box>
+<message-box min-width="12em" radius="128vw">
+  <span slot="message">This is a smooth one...</span>
+</message-box>
 
   </div>
 </section>
 
-## Declarative rendering
-
-<section class="columns">
-  <div>
-
-`<message-box>` can be used with declarative rendering libraries like Angular, React, Vue, and lit-html
-
-```js
-import {html, render} from 'lit-html';
-
-const name = 'lit-html';
-
-render(
-  html`
-    <h2>This is a &lt;message-box&gt;</h2>
-    <message-box .name=${name}></message-box>
-  `,
-  document.body
-);
-```
-
-  </div>
-  <div>
-
-<h2>This is a &lt;message-box&gt;</h2>
-<message-box name="lit-html"></message-box>
-
-  </div>
-</section>

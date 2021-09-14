@@ -5,64 +5,91 @@
       "name": "message-box",
       "path": "./src/message-box.ts",
       "description": "A simple message-box web component.",
-      "attributes": [
-        {
-          "name": "name",
-          "description": "The name to say \"Hello\" to.",
-          "type": "string",
-          "default": "\"World\""
-        },
-        {
-          "name": "count",
-          "description": "The number of times the button has been clicked.",
-          "type": "number",
-          "default": "0"
-        }
-      ],
       "properties": [
         {
-          "name": "name",
-          "attribute": "name",
-          "description": "The name to say \"Hello\" to.",
+          "name": "height",
+          "attribute": "height",
+          "description": "The height of component",
           "type": "string",
-          "default": "\"World\""
+          "default": "\"initial\""
         },
         {
-          "name": "count",
-          "attribute": "count",
-          "description": "The number of times the button has been clicked.",
-          "type": "number",
-          "default": "0"
+          "name": "width",
+          "attribute": "width",
+          "description": "The width of component",
+          "type": "string",
+          "default": "\"initial\""
         },
         {
-          "name": "renderRoot",
-          "description": "Node or ShadowRoot into which element DOM should be rendered. Defaults\nto an open shadowRoot.",
-          "type": "HTMLElement | ShadowRoot"
+          "name": "minWidth",
+          "attribute": "min-width",
+          "description": "The min-width of component",
+          "type": "string",
+          "default": "\"initial\""
         },
         {
-          "name": "isUpdatePending",
-          "type": "boolean"
+          "name": "border",
+          "attribute": "border",
+          "description": "The `border` css property of component",
+          "type": "string",
+          "default": "\"0\""
         },
         {
-          "name": "hasUpdated",
-          "type": "boolean"
+          "name": "color",
+          "attribute": "color",
+          "description": "The `color` css property of component",
+          "type": "string",
+          "default": "\"255, 255, 255\""
         },
         {
-          "name": "updateComplete",
-          "description": "Returns a Promise that resolves when the element has completed updating.\nThe Promise value is a boolean that is `true` if the element completed the\nupdate without triggering another update. The Promise result is `false` if\na property was set inside `updated()`. If the Promise is rejected, an\nexception was thrown during the update.\n\nTo await additional asynchronous work, override the `getUpdateComplete`\nmethod. For example, it is sometimes useful to await a rendered element\nbefore fulfilling this Promise. To do this, first await\n`super.getUpdateComplete()`, then any subsequent state.",
-          "type": "Promise<boolean>"
+          "name": "radius",
+          "attribute": "radius",
+          "description": "The `border-radius` of component",
+          "type": "string",
+          "default": "\"0\""
+        },
+        {
+          "name": "shadow",
+          "attribute": "shadow",
+          "description": "The `box-shadow` css property of component",
+          "type": "string",
+          "default": "\"0, 1rem, 1rem\""
+        },
+        {
+          "name": "out",
+          "attribute": "out",
+          "description": "The out method of component. one of \"right\"|\"top\".",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "timeout",
+          "attribute": "timeout",
+          "description": "The display time of the component.",
+          "type": "string",
+          "default": "\"0\""
         }
       ],
       "slots": [
         {
-          "name": "",
-          "description": "This element has a slot"
+          "name": "message",
+          "description": "The 'message' component that needs to be displayed, the most basic such as `SPAN`"
+        },
+        {
+          "name": "button",
+          "description": "`BUTTON`s that need to be displayed"
         }
       ],
       "cssParts": [
         {
-          "name": "button",
-          "description": "The button"
+          "name": "--message-box-background-color",
+          "description": "Set background color of component",
+          "default": "0, 0, 0"
+        },
+        {
+          "name": "--message-box-opacity",
+          "description": "Set opacity of component",
+          "default": "0.8"
         }
       ]
     }

@@ -11,40 +11,27 @@ import { styleMap } from 'lit-html/directives/style-map';
 import { host, root, content, button, animation } from './message-box.style';
 var Status;
 (function (Status) {
-    Status[Status["Sightless"] = 0] = "Sightless";
+    Status[Status["sightless"] = 0] = "sightless";
     Status[Status["visible"] = 1] = "visible";
-    Status[Status["Triiggered"] = 2] = "Triiggered";
+    Status[Status["triiggered"] = 2] = "triiggered";
 })(Status || (Status = {}));
-/**
- * An example element.
- *
- * @slot - This element has a slot
- * @csspart button - The button
- */
 let MessageBox = class MessageBox extends LitElement {
     constructor() {
         //// Component configurations ////
         super(...arguments);
-        //// Properties ////
-        this.height = 'initial';
-        this.minWidth = 'initial';
-        this.width = 'initial';
-        this.border = '0';
-        this.color = '255, 255, 255';
-        this.radius = '0';
-        this.shadow = '0 1em 1em';
+        this.shadow = '0 1rem 1rem';
         this.out = '';
-        this.status = Status.Sightless;
+        this.status = Status.sightless;
         this.timeout = '0';
         //// Event Listeners ////
         this.transitionend = () => {
-            if (this.status === Status.Triiggered) {
-                this.status = Status.Sightless;
+            if (this.status === Status.triiggered) {
+                this.status = Status.sightless;
                 this.dispatchEvent(new CustomEvent('triggered'));
             }
         };
         this.sendTriggered = () => {
-            this.status = Status.Triiggered;
+            this.status = Status.triiggered;
         };
     }
     //// Lifecycles ////
@@ -58,14 +45,14 @@ let MessageBox = class MessageBox extends LitElement {
     }
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.status = Status.Sightless;
+        this.status = Status.sightless;
     }
     render() {
         const { height, width, minWidth, border, color, radius, shadow, out, status, timeout, } = this;
         const rootClass = {
             root: true,
-            out: status === Status.Triiggered,
-            [`out-${out}`]: status === Status.Triiggered && out,
+            out: status === Status.triiggered,
+            [`out-${out}`]: status === Status.triiggered && out,
             'progress-gradient': Number(timeout) > 0,
         };
         const rootStyle = {
@@ -74,12 +61,16 @@ let MessageBox = class MessageBox extends LitElement {
             minWidth,
             border,
             borderRadius: radius,
-            boxShadow: `${shadow} rgba(
-        var(--message-box-background-color),
-        calc(var(--message-box-opacity) * 0.8)
-      )`,
-            color: `rgb(${color})`,
-            animation: Number(timeout) > 0 ? `${timeout}s linear progress` : 'initial'
+            boxShadow: /^[0-9\spxrem]+$/.test(shadow)
+                ? `${shadow} rgba(
+          var(--message-box-background-color),
+          calc(var(--message-box-opacity) * 0.8)
+        )`
+                : shadow,
+            color: color && `rgb(${color})`,
+            animation: Number(timeout) > 0
+                ? `${timeout}s linear progress`
+                : 'initial'
         };
         return html `
       <div

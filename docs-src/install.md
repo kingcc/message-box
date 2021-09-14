@@ -10,7 +10,7 @@ title: <message-box> ⌲ Install
 ## Local Installation
 
 ```bash
-npm i message-box
+npm i @lit-component/message-box
 ```
 
 ## CDN
@@ -22,11 +22,11 @@ For this element to work from unpkg.com specifically, you need to include the `?
 ### HTML
 
 ```html
-<script type="module" src="https://unpkg.com/message-box?module"></script>
+<script type="module" src="https://unpkg.com/@lit-component/message-box?module"></script>
 ```
 
 ### JavaScript
 
 ```html
-import {MessageBox} from 'https://unpkg.com/message-box?module';
+import {MessageBox} from 'https://unpkg.com/@lit-component/message-box?module';
 ```
