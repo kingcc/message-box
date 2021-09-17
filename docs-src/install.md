@@ -26,7 +26,3 @@ For this element to work from unpkg.com specifically, you need to include the `?
 ```
 
 ### JavaScript
-
-```html
-import {MessageBox} from 'https://unpkg.com/@lit-component/message-box?module';
-```
