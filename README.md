@@ -1,123 +1,161 @@
-# LitElement TypeScript starter
+`<message-box/>`
+================
 
-This project includes a sample component using LitElement with TypeScript.
+`<message-box/>` is a Web component implemented on Lit-Element library.
+It is similar to native HTML Element and could runs in mainstream browsers without any diffrence.
 
-## Setup
+In short, it is a message string box and some buttons,
+common application scenario is to convey to the website user some information.
+For example:
 
-Install dependencies:
-
-```bash
-npm i
+```html
+<message-box class="colorful" >
+  <span slot="message">
+    This is an example that contains only one option.
+  </span>
+  <button slot="button">Okay</button>
+</message-box>
 ```
 
-## Build
+It looks like this:
 
-This sample uses the TypeScript compiler to produce JavaScript that runs in modern browsers.
+![](./docs-src/examples/message_box_1.png)
 
-To build the JavaScript version of your component:
+Another common scenario is the progress bar.
+Message-box has a progress bar via gradient background color:
 
-```bash
-npm run build
+![](./docs-src/examples/message_box_2.png)
+
+More examples can be found [here](https://codepen.io/kingcc/pen/Pojwrgr).
+
+![](./docs-src/examples/message_box_3.png)
+
+### Usage
+
+##### Import directly in HTML
+
+npm CDNs like `unpkg.com` can directly serve files that have been published to npm. This works great for standard JavaScript modules that the browser can load natively.
+
+So recommended ways of importing:
+
+```html
+<!-- Importing -->
+<script type="module">
+  import 'https://unpkg.com/@lit-component/message-box?module';
+  ...
+</script>
+<!-- Using -->
+<message-box .../>
 ```
 
-To watch files and rebuild when the files are modified, run the following command in a separate shell:
+Or:
 
-```bash
-npm run build:watch
+```html
+<!-- Importing -->
+<script type="module" src="https://unpkg.com/@lit-component/message-box?module"></script>
+<!-- Using -->
+<message-box .../>
 ```
 
-Both the TypeScript compiler and lit-analyzer are configured to be very strict. You may want to change `tsconfig.json` to make them less strict.
+##### Import in project using Npm & Webpack
 
-## Testing
-
-This sample uses modern-web.dev's
-[@web/test-runner](https://www.npmjs.com/package/@web/test-runner) along with
-Mocha, Chai, and some related helpers for testing. See the
-[modern-web.dev testing documentation](https://modern-web.dev/docs/test-runner/overview) for
-more information.
-
-Tests can be run with the `test` script:
-
-```bash
-npm test
+1. Installation via NPM
+   
+```sh
+npm i @lit-component/message-box
 ```
 
-## Dev Server
+2. Importing
 
-This sample uses modern-web.dev's [@web/dev-server](https://www.npmjs.com/package/@web/dev-server) for previewing the project without additional build steps. Web Dev Server handles resolving Node-style "bare" import specifiers, which aren't supported in browsers. It also automatically transpiles JavaScript and adds polyfills to support older browsers. See [modern-web.dev's Web Dev Server documentation](https://modern-web.dev/docs/dev-server/overview/) for more information.
+In webpack entry script, usually, `index.js`:
 
-To run the dev server and open the project in a new browser tab:
-
-```bash
-npm run serve
+```js
+import '@lit-component/message-box'
 ```
 
-There is a development HTML file located at `/dev/index.html` that you can view at http://localhost:8000/dev/index.html.
+In HTML:
 
-## Editing
-
-If you use VS Code, we highly recommend the [lit-plugin extension](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin), which enables some extremely useful features for lit-html templates:
-
-- Syntax highlighting
-- Type-checking
-- Code completion
-- Hover-over docs
-- Jump to definition
-- Linting
-- Quick Fixes
-
-The project is setup to recommend lit-plugin to VS Code users if they don't already have it installed.
-
-## Linting
-
-Linting of TypeScript files is provided by [ESLint](eslint.org) and [TypeScript ESLint](https://github.com/typescript-eslint/typescript-eslint). In addition, [lit-analyzer](https://www.npmjs.com/package/lit-analyzer) is used to type-check and lint lit-html templates with the same engine and rules as lit-plugin.
-
-The rules are mostly the recommended rules from each project, but some have been turned off to make LitElement usage easier. The recommended rules are pretty strict, so you may want to relax them by editing `.eslintrc.json` and `tsconfig.json`.
-
-To lint the project run:
-
-```bash
-npm run lint
+```html
+<message-box .../>
 ```
 
-## Formatting
+###	Attribute & Properties
 
-[Prettier](https://prettier.io/) is used for code formatting. It has been pre-configured according to the Polymer Project's style. You can change this in `.prettierrc.json`.
+<table>
+  <tr>
+    <th>Name</th><th>Attribute</th><th>Description</th><th>Type</th><th>Default</th>
+  </tr>
 
-Prettier has not been configured to run when committing files, but this can be added with Husky and and `pretty-quick`. See the [prettier.io](https://prettier.io/) site for instructions.
+  <tr>
+    <td>height</td><td>height</td><td>The height of component</td><td>string</td><td>"initial"</td>
+  </tr>
 
-## Static Site
+  <tr>
+    <td>width</td><td>width</td><td>The width of component</td><td>string</td><td>"initial"</td>
+  </tr>
 
-This project includes a simple website generated with the [eleventy](11ty.dev) static site generator and the templates and pages in `/docs-src`. The site is generated to `/docs` and intended to be checked in so that GitHub pages can serve the site [from `/docs` on the master branch](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+  <tr>
+    <td>minWidth</td><td>min-width</td><td>The min-width of component</td><td>string</td><td>"initial"</td>
+  </tr>
 
-To enable the site go to the GitHub settings and change the GitHub Pages &quot;Source&quot; setting to &quot;master branch /docs folder&quot;.</p>
+  <tr>
+    <td>border</td><td>border</td><td>The `border` css property of component</td><td>string</td><td>"0"</td>
+  </tr>
 
-To build the site, run:
+  <tr>
+    <td>color</td><td>color</td><td>The `color` css property of component</td><td>string</td><td>"255, 255, 255"</td>
+  </tr>
 
-```bash
-npm run docs
-```
+  <tr>
+    <td>radius</td><td>radius</td><td>The `border-radius` of component</td><td>string</td><td>"0"</td>
+  </tr>
 
-To serve the site locally, run:
+  <tr>
+    <td>shadow</td><td>shadow</td><td>The `box-shadow` css property of component</td><td>string</td><td>"0, 1rem, 1rem"</td>
+  </tr>
 
-```bash
-npm run docs:serve
-```
+  <tr>
+    <td>out</td><td>out</td><td>The out method of component. one of "right"|"top".</td><td>string</td><td>""</td>
+  </tr>
 
-To watch the site files, and re-build automatically, run:
+  <tr>
+    <td>timeout</td><td>timeout</td><td>The display time of the component.</td><td>string</td><td>"0"</td>
+  </tr>
+  
+</table>
 
-```bash
-npm run docs:watch
-```
+    
+### Slots
 
-The site will usually be served at http://localhost:8000.
+<table>
+  <tr>
+    <th>Name</th><th>Description</th>
+  </tr>
+  
+  <tr>
+    <td>message</td><td>The 'message' component that needs to be displayed, the most basic such as `SPAN`</td>
+  </tr>
 
-## Bundling and minification
+  <tr>
+    <td>button</td><td>`BUTTON`s that need to be displayed</td>
+  </tr>
+  
+</table>
 
-This starter project doesn't include any build-time optimizations like bundling or minification. We recommend publishing components as unoptimized JavaScript modules, and performing build-time optimizations at the application level. This gives build tools the best chance to deduplicate code, remove dead code, and so on.
+    
+### CSS Shadow Parts
 
-For information on building application projects that include LitElement components, see [Build for production](https://lit.dev/docs/tools/production/) on the Lit site.
+<table>
+  <tr>
+    <th>Name</th><th>Description</th>
+  </tr>
+  
+  <tr>
+    <td>--message-box-background-color</td><td>Set background color of component</td>
+  </tr>
 
-## More information
-
-See [Get started](https://lit.dev/docs/getting-started/) on the Lit site for more information.
+  <tr>
+    <td>--message-box-opacity</td><td>Set opacity of component</td>
+  </tr>
+  
+</table>

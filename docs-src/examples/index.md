@@ -80,12 +80,7 @@ description: A basic example
     <button slot="button" class="orange">Cool</button>
   </message-box>
 
-  <message-box
-    color="0, 0, 0"
-    border="1px solid black"
-    shadow="0 1rem 1rem rgba(0, 0, 0, .2)"
-    class="transparent"
-  >
+  <message-box color="0, 0, 0" border="1px solid black" shadow="0 1rem 1rem rgba(0, 0, 0, .2)" class="transparent">
     <span slot="message">
       This is one transparent.
     </span>
