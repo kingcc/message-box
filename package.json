@@ -39,6 +39,10 @@
     "lit": "^2.0.0-rc.1",
     "lit-html": "^2.0.0-rc.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kingcc/message-box.git"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
