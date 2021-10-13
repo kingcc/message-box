@@ -23,4 +23,5 @@ declare global {
         'message-box': MessageBox;
     }
 }
+export { default as generator } from './message-box.generator';
 //# sourceMappingURL=message-box.d.ts.map

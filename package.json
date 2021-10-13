@@ -1,6 +1,6 @@
 {
   "name": "@lit-component/message-box",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple message-box web component",
   "main": "message-box.js",
   "module": "message-box.js",

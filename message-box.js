@@ -122,4 +122,5 @@ MessageBox = __decorate([
     customElement('message-box')
 ], MessageBox);
 export { MessageBox };
+export { default as generator } from './message-box.generator';
 //# sourceMappingURL=message-box.js.map

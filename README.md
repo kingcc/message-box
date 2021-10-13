@@ -2,7 +2,7 @@
 ================
 
 `<message-box/>` is a Web component implemented on Lit-Element library.
-It is similar to native HTML Element and could runs in mainstream browsers without any diffrence.
+It is similar to native HTML Element and could runs in mainstream browsers without any difference.
 
 In short, it is a message string box and some buttons,
 common application scenario is to convey to the website user some information.
@@ -81,9 +81,23 @@ In HTML:
 
 ###	Attribute & Properties
 
+You can set attributes for `<message-box/>` elements directly or properties for Web Component MessageBox instances, and they have the same effect:
+
+```html
+<message-box min-width="20vw"/>
+
+<!-- Is equal to -->
+
+<message-box/>
+<script>
+const $messageBox = document.querySelector('message-box')
+$messageBox.minWidth = '20vw'
+</script>
+```
+
 <table>
   <tr>
-    <th>Name</th><th>Attribute</th><th>Description</th><th>Type</th><th>Default</th>
+    <th>Property</th><th>Attribute</th><th>Description</th><th>Type</th><th>Default</th>
   </tr>
 
   <tr>
