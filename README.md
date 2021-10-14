@@ -81,6 +81,8 @@ In HTML:
 
 ##### Create `<message-box/>` with `generator`
 
+> **Note that to avoid XSS attacks, DO NOT pass in non-hard-coded content.**
+
 `generator` is using for generates a `<message-box/>` quickly:
 
 ```js
