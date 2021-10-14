@@ -99,7 +99,7 @@ const $messageBox = generator(
   {
     position: 'fixed',
     top: '2vh',
-    'z-index': 'max',
+    'z-index': 'max', // MessageBox will automatically calculate the maximum `z-index` based on mountPoint
   },
   mountPoint
 )
