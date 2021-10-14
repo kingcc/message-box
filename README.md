@@ -118,8 +118,8 @@ You can set attributes for `<message-box/>` elements directly or properties for 
 
 <message-box/>
 <script>
-const $messageBox = document.querySelector('message-box')
-$messageBox.minWidth = '20vw'
+  const $messageBox = document.querySelector('message-box')
+  $messageBox.minWidth = '20vw'
 </script>
 ```
 
