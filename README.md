@@ -21,7 +21,7 @@ It looks like this:
 
 ![](./docs-src/examples/message_box_1.png)
 
-Another common scenario is the progress bar.
+Another common scenario is progress bar.
 Message-box has a progress bar via gradient background color:
 
 ![](./docs-src/examples/message_box_2.png)
