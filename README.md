@@ -79,6 +79,34 @@ In HTML:
 <message-box .../>
 ```
 
+##### Create `<message-box/>` with `generator`
+
+`generator` is using for generates a `<message-box/>` quickly:
+
+```js
+import { generator } from '@lit-component/message-box'
+
+const mountPoint = document.body
+
+const $messageBox = generator(
+  `
+    <span slot="message">
+      This is an example that contains only one option.
+    </span>
+    <button slot="button">Okay</button>
+  `,
+  { out: 'right' },
+  {
+    position: 'fixed',
+    top: '2vh',
+    'z-index': 'max',
+  },
+  mountPoint
+)
+
+mountPoint.appendChild($messageBox)
+```
+
 ###	Attribute & Properties
 
 You can set attributes for `<message-box/>` elements directly or properties for Web Component MessageBox instances, and they have the same effect:

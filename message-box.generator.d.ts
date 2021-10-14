@@ -10,6 +10,16 @@ declare type WritableKeys<Type> = {
 declare type PropertiesDict = Partial<Pick<MessageBox, NonNullable<WritableKeys<MessageBox>>>>;
 declare type SetPropertyParameters = Parameters<CSSStyleDeclaration["setProperty"]>;
 declare type StylesDict = Partial<Record<SetPropertyParameters["0"], SetPropertyParameters["1"]>>;
-declare function generator(propertiesDict?: PropertiesDict, stylesDict?: StylesDict, mountPoint?: HTMLElement, doc?: Document): void;
+/**
+ * For quickly generate a message-box
+ *
+ * @param children        - children of `<message-box/>`
+ * @param propertiesDict  - properties dictionary for initialize, optional
+ * @param stylesDict      - stylesheet dictionary for initialize, optional
+ * @param mountPoint      - reference to mount point element for computing style, optional
+ * @param doc             - reference to document, optional
+ * @returns {MessageBox} instance
+ */
+declare function generator(children: HTMLElement | HTMLElement[] | string, propertiesDict?: PropertiesDict, stylesDict?: StylesDict, mountPoint?: HTMLElement | null, doc?: Document): MessageBox;
 export default generator;
 //# sourceMappingURL=message-box.generator.d.ts.map
