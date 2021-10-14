@@ -4,8 +4,8 @@
 `<message-box/>` is a Web component implemented on Lit-Element library.
 It is similar to native HTML Element and could runs in mainstream browsers without any difference.
 
-In short, it is a message string box and some buttons,
-common application scenario is to convey to the website user some information.
+In short, it is a container contains a message string box and some buttons,
+which common application scenario is to convey to the website user some information.
 For example:
 
 ```html
