@@ -30,9 +30,9 @@ More examples can be found [here](https://codepen.io/kingcc/pen/Pojwrgr).
 
 ![](./docs-src/examples/message_box_3.png)
 
-### Usage
+## Usage
 
-##### Import directly in HTML
+#### Import directly in HTML
 
 npm CDNs like `unpkg.com` can directly serve files that have been published to npm. This works great for standard JavaScript modules that the browser can load natively.
 
@@ -57,7 +57,7 @@ Or:
 <message-box .../>
 ```
 
-##### Import in project using Npm & Webpack
+#### Import in project using Npm & Webpack
 
 1. Installation via NPM
    
@@ -79,7 +79,7 @@ In HTML:
 <message-box .../>
 ```
 
-##### Create `<message-box/>` with `generator`
+#### Create `<message-box/>` with `generator`
 
 > **Note that to avoid XSS attacks, DO NOT pass in non-hard-coded content.**
 
@@ -109,7 +109,23 @@ const $messageBox = generator(
 mountPoint.appendChild($messageBox)
 ```
 
-###	Attribute & Properties
+Its interface is:
+
+```typescript
+/**
+ * For quickly generate a message-box
+ *
+ * @param children        - children of `<message-box/>`
+ * @param propertiesDict  - properties dictionary for initialize, optional
+ * @param stylesDict      - stylesheet dictionary for initialize, optional
+ * @param mountPoint      - reference to mount point element for computing style, optional
+ * @param doc             - reference to document, optional
+ * @returns {MessageBox} instance
+ */
+function generator(children, propertiesDict, stylesDict, mountPoint, doc): MessageBox
+```
+
+## Attribute & Properties
 
 You can set attributes for `<message-box/>` elements directly or properties for Web Component MessageBox instances, and they have the same effect:
 
@@ -169,7 +185,7 @@ You can set attributes for `<message-box/>` elements directly or properties for 
 </table>
 
     
-### Slots
+## Slots
 
 <table>
   <tr>
@@ -187,7 +203,7 @@ You can set attributes for `<message-box/>` elements directly or properties for 
 </table>
 
     
-### CSS Shadow Parts
+## CSS Parts
 
 <table>
   <tr>
