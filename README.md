@@ -122,7 +122,13 @@ Its interface is:
  * @param doc             - reference to document, optional
  * @returns {MessageBox} instance
  */
-function generator(children, propertiesDict, stylesDict, mountPoint, doc): MessageBox
+function generator(
+  children: HTMLElement | HTMLElement[] | string,
+  propertiesDict: PropertiesDict = {},
+  stylesDict: StylesDict = {},
+  mountPoint: HTMLElement | null = null,
+  doc: Document = document,
+): MessageBox
 ```
 
 ## Attribute & Properties
